@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_1</activeVersionIdentifier>
+    <developerName>Email_Replies_Config</developerName>
+    <masterLabel>Email Replies Config</masterLabel>
+    <relatedEntity>EmailMessage</relatedEntity>
+    <templateVersions>
+        <content>You are an agent who needs to understand the email sentiments and requirements. Go through the {!$Input:EmailMessage.TextBody} or {!$Input:EmailMessage.HtmlBody} whichever is having the contents and try to generate assuring response that continues the deal with the email sender.
+
+Get the sender name from {!$Input:EmailMessage.FromName} and subject from {!$Input:EmailMessage.Subject} this will help in generating valuable responses.
+</content>
+        <inputs>
+            <apiName>objectToSummarize</apiName>
+            <definition>SOBJECT://EmailMessage</definition>
+            <referenceName>Input:EmailMessage</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__recordSummary</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>
