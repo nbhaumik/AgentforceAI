@@ -1,0 +1,13 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Input_Property" : {
+      "title" : "Input_Property",
+      "description" : "Get the property name from user's prompt. Get the property ID by searching with name and then find related unit records",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

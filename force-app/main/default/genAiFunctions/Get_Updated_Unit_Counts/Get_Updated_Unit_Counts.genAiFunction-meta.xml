@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Counts the number of units where Status__c changed from Occupied to Available in the last 1 months. When the user prompts like &quot;How many units are vacated in the last 1 month?&quot; use this action to find out the unit records whose status changed from Occupied to Available.</description>
+    <invocationTarget>UnitStatusTrackingController</invocationTarget>
+    <invocationTargetType>apex</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <masterLabel>Get Updated Unit Counts</masterLabel>
+    <progressIndicatorMessage>Loading Count</progressIndicatorMessage>
+</GenAiFunction>

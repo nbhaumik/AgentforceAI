@@ -1,0 +1,13 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "PaymentStatus" : {
+      "title" : "PaymentStatus",
+      "description" : "If the user ask for payment details with status hold or paid Payment details. Input can be anything like hold, on hold, paid etc",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Fetch the Unit__c records by filtering by the number of bedrooms or bathrooms as given by the user in the prompt. If the User gives terms like 2bhk or 3bhk, it refers to how many bedrooms are there in the unit. Also, if the user wants to fetch the units of a particular property, the user should give the name of the property and the action will fetch the units related only to that property.</description>
+    <invocationTarget>GetUnitWithRoomDetails</invocationTarget>
+    <invocationTargetType>flow</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>Get Unit with Room Details</masterLabel>
+</GenAiFunction>

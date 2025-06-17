@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Fetches Tenant_Info__c and Unit__c records based on due Payment_Detail__c records</description>
+    <invocationTarget>Get_Tenants_By_Units</invocationTarget>
+    <invocationTargetType>flow</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <masterLabel>Get Tenants By Units</masterLabel>
+    <progressIndicatorMessage>Fetching tenent and unit information</progressIndicatorMessage>
+</GenAiFunction>

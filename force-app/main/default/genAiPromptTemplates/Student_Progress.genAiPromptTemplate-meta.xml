@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_13</activeVersionIdentifier>
+    <description>This Template will send student progress to parent</description>
+    <developerName>Student_Progress</developerName>
+    <masterLabel>Student Progress</masterLabel>
+    <templateVersions>
+        <content>Write a friendly and respectful email body to {!$Input:Student.Parent_Contact__r.Name}, the parent of {!$Input:Student.Name}, who is currently in class {!$Input:Student.Class__c}.
+
+Summarize their performance in both academics and extracurricular activities for this semester.
+
+
+For academic progress:
+{!$RelatedList:Student.Education_Details1__r.Records}
+
+For Extra Curricular progress:
+{!$RelatedList:Student.Education_Details2__r.Records}
+
+
+Close the message by thanking
+Use a warm, encouraging tone.
+
+only email body no subject
+
+</content>
+        <inputs>
+            <apiName>Student</apiName>
+            <definition>SOBJECT://Student__c</definition>
+            <masterLabel>Student</masterLabel>
+            <referenceName>Input:Student</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details1__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details1__r.Records</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details2__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details2__r.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Write a friendly and respectful email body to {!$Input:Student.Parent_Contact__r.Name}, the parent of {!$Input:Student.Name}, who is currently in class {!$Input:Student.Class__c}.
+
+Begin like this Dear {!$Input:Student.Parent_Contact__r.Name},
+I hope this message finds you well.
+I would like to share the progress report for {!$Input:Student.Name}, who is currently studying in Class {!$Input:Student.Class__c}, summarizing their performance during this semester in both academics and extracurricular activities.
+ Make the Parent name, Student Name and Class Bold and Italic
+
+Then first talk about their Academic Progress. Take details from {!$RelatedList:Student.Education_Details1__r.Records} .
+
+After That take details from {!$RelatedList:Student.Education_Details2__r.Records} and talk about Extra Curricular Progress.
+
+
+
+Close the message by thanking
+Use a warm, encouraging tone.
+
+only email body no subject
+
+</content>
+        <inputs>
+            <apiName>Student</apiName>
+            <definition>SOBJECT://Student__c</definition>
+            <masterLabel>Student</masterLabel>
+            <referenceName>Input:Student</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details1__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details1__r.Records</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details2__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details2__r.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_2</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Dear **_{{$Input:Student.Parent_Contact__r.Name}}_**,
+
+I hope this message finds you well.
+
+I would like to share the progress report for **_{{$Input:Student.Name}}_**, who is currently studying in Class **_{{$Input:Student.Class__c}}_**, summarizing their performance during this semester in both academics and extracurricular activities.
+
+---
+
+**Academic Progress:**  
+Here is a summary of **_{{$Input:Student.Name}}_**&apos;s academic performance:
+
+{{$RelatedList:Student.Education_Details1__r.Records}}
+
+---
+
+**Extracurricular Progress:**  
+Below is an overview of their involvement in extracurricular activities:
+
+{{$RelatedList:Student.Education_Details2__r.Records}}
+
+---
+
+Thank you for your continued support and encouragement. We are proud of **_{{$Input:Student.Name}}_**’s efforts and look forward to their continued success.
+
+Warm regards,  
+[Your Name]  
+[Your Position]  
+[School Name]
+
+</content>
+        <inputs>
+            <apiName>Student</apiName>
+            <definition>SOBJECT://Student__c</definition>
+            <masterLabel>Student</masterLabel>
+            <referenceName>Input:Student</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Draft</status>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_3</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Write a friendly and respectful email body to {!$Input:Student.Parent_Contact__r.Name}, the parent of {!$Input:Student.Name}, who is currently in class {!$Input:Student.Class__c}.
+
+Begin the message like this:
+
+Dear **_{{$Input:Student.Parent_Contact__r.Name}}_**,
+
+I hope this message finds you well.
+
+I would like to share the progress report for **_{{$Input:Student.Name}}_**, who is currently studying in Class **_{{$Input:Student.Class__c}}_**, summarizing their performance during this semester in both academics and extracurricular activities.
+
+[Insert line break]
+
+Academic Progress:
+
+Please include the following details from the related list {{$RelatedList:Student.Education_Details1__r.Records}}.
+Mention their Course Name, Academic Review, and Grade in a friendly and informative tone.
+
+[Insert line break]
+
+Extracurricular Progress:
+
+Now, summarize details from {{$RelatedList:Student.Education_Details2__r.Records}}.
+Include the activities the student participated in and any achievements or notable involvement.
+
+[Insert line break]
+
+Conclude the message warmly by thanking the parent for their support and expressing encouragement for the student&apos;s continued progress.
+Use a warm and supportive tone.
+
+</content>
+        <inputs>
+            <apiName>Student</apiName>
+            <definition>SOBJECT://Student__c</definition>
+            <masterLabel>Student</masterLabel>
+            <referenceName>Input:Student</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_4</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Write a friendly and respectful email body to {!$Input:Student.Parent_Contact__r.Name}, the parent of {!$Input:Student.Name}, who is currently in class {!$Input:Student.Class__c} in a structured way.
+
+Begin like this Dear {!$Input:Student.Parent_Contact__r.Name},
+I hope this message finds you well.
+I would like to share the progress report for {!$Input:Student.Name}, who is currently studying in Class {!$Input:Student.Class__c}, summarizing their performance during this semester in both academics and extracurricular activities.
+ Make the Parent name, Student Name and Class Bold and Italic
+
+Then in next paragraph,first talk about their Academic Progress. Take details from {!$RelatedList:Student.Education_Details1__r.Records} .
+
+After That in next paragraph, take details from {!$RelatedList:Student.Education_Details2__r.Records} and talk about Extra Curricular Progress.
+
+
+
+Close the message by thanking
+Use a warm, encouraging tone.
+
+only email body no subject
+
+</content>
+        <inputs>
+            <apiName>Student</apiName>
+            <definition>SOBJECT://Student__c</definition>
+            <masterLabel>Student</masterLabel>
+            <referenceName>Input:Student</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details1__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details1__r.Records</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details2__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details2__r.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_5</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Write a friendly and respectful email body to {!$Input:Student.Parent_Contact__r.Name}, the parent of {!$Input:Student.Name}, who is currently in class {!$Input:Student.Class__c} in a structured way.
+
+Begin like this Dear {!$Input:Student.Parent_Contact__r.Name},
+I hope this message finds you well.
+I would like to share the progress report for {!$Input:Student.Name}, who is currently studying in Class {!$Input:Student.Class__c}, summarizing their performance during this semester in both academics and extracurricular activities.
+Then first talk about their Academic Progress. Take details from {!$RelatedList:Student.Education_Details1__r.Records} .
+After That take details from {!$RelatedList:Student.Education_Details2__r.Records} and talk about Extra Curricular Progress.
+Close the message by thanking
+Use a warm, encouraging tone.
+
+Use separate paragraphs in your response.
+only email body no subject
+
+</content>
+        <inputs>
+            <apiName>Student</apiName>
+            <definition>SOBJECT://Student__c</definition>
+            <masterLabel>Student</masterLabel>
+            <referenceName>Input:Student</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Draft</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details1__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details1__r.Records</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details2__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details2__r.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_6</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Write a friendly and respectful email body to {!$Input:Student.Parent_Contact__r.Name}, the parent of {!$Input:Student.Name}, who is currently in class {!$Input:Student.Class__c} in a structured way.
+
+Begin like this Dear {!$Input:Student.Parent_Contact__r.Name},
+I hope this message finds you fine.
+I would like to share the progress report for {!$Input:Student.Name}, who is studying in Class {!$Input:Student.Class__c}, summarizing their performance during this semester in both academics and extracurricular activities.
+Then first talk about their Academic Progress. Take details from {!$RelatedList:Student.Education_Details1__r.Records} .
+After That take details from {!$RelatedList:Student.Education_Details2__r.Records} and talk about Extra Curricular Progress.
+Close the message by thanking
+Use a warm, encouraging tone.
+
+Use separate paragraphs in your response.
+
+only email body no subject
+
+</content>
+        <inputs>
+            <apiName>Student</apiName>
+            <definition>SOBJECT://Student__c</definition>
+            <masterLabel>Student</masterLabel>
+            <referenceName>Input:Student</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details1__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details1__r.Records</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details2__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details2__r.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_7</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Write a friendly and respectful email body to {!$Input:Student.Parent_Contact__r.Name}, the parent of {!$Input:Student.Name}, who is currently in class {!$Input:Student.Class__c} in a structured way.
+
+Begin like this Dear {!$Input:Student.Parent_Contact__r.Name},
+I hope this message finds you fine.
+I would like to share the progress report for {!$Input:Student.Name}, who is studying in Class {!$Input:Student.Class__c}, summarizing their performance during this semester in both academics and extracurricular activities.
+
+Then first talk about their Academic Progress. Take details from {!$RelatedList:Student.Education_Details1__r.Records} .
+
+After That take details from {!$RelatedList:Student.Education_Details2__r.Records} and talk about Extra Curricular Progress.
+
+Close the message by thanking
+Use a warm, encouraging tone.
+
+             Instructions
+1.Use separate paragraphs in your response.
+2.only email body no subject
+
+</content>
+        <inputs>
+            <apiName>Student</apiName>
+            <definition>SOBJECT://Student__c</definition>
+            <masterLabel>Student</masterLabel>
+            <referenceName>Input:Student</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details1__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details1__r.Records</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details2__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details2__r.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_8</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Write a friendly and respectful email body to {!$Input:Student.Parent_Contact__r.Name}, the parent of {!$Input:Student.Name}, who is currently in class {!$Input:Student.Class__c} in a structured way.
+
+Begin like this Dear {!$Input:Student.Parent_Contact__r.Name},
+I hope this message finds you fine.
+I would like to share the progress report for {!$Input:Student.Name}, who is student in Class {!$Input:Student.Class__c}, summarizing their performance during this semester in both academics and extracurricular activities.
+
+Then first talk about their Academic Progress. Take details from {!$RelatedList:Student.Education_Details1__r.Records} .
+
+After That take details from {!$RelatedList:Student.Education_Details2__r.Records} and talk about Extra Curricular Progress.
+
+Close the message by thanking
+Use a warm, encouraging tone.
+
+             Instructions
+1.Use separate paragraphs in your response.
+2.only email body no subject
+
+</content>
+        <inputs>
+            <apiName>Student</apiName>
+            <definition>SOBJECT://Student__c</definition>
+            <masterLabel>Student</masterLabel>
+            <referenceName>Input:Student</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details1__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details1__r.Records</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details2__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details2__r.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_9</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Write a friendly and respectful email body to {!$Input:Student.Parent_Contact__r.Name}, the parent of {!$Input:Student.Name}, who is currently in class {!$Input:Student.Class__c} in a structured way.
+
+Begin like this Dear {!$Input:Student.Parent_Contact__r.Name},
+I hope this message finds you fine.
+I would like to share the progress report for {!$Input:Student.Name}, who is student in Class {!$Input:Student.Class__c}, summarizing their performance during this semester in both academics and extracurricular activities.
+
+Then first talk about their Academic Progress. Take details from {!$RelatedList:Student.Education_Details1__r.Records} .
+
+After That take details from {!$RelatedList:Student.Education_Details2__r.Records} and talk about Extra Curricular Progress.
+
+Close the message by thanking
+Use a warm, encouraging tone.
+
+             Instructions
+1.Use separate paragraphs in your response.
+2.only email body no subject
+3. Email body should be in a formatted one
+</content>
+        <inputs>
+            <apiName>Student</apiName>
+            <definition>SOBJECT://Student__c</definition>
+            <masterLabel>Student</masterLabel>
+            <referenceName>Input:Student</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details1__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details1__r.Records</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details2__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details2__r.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_10</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Write a friendly and respectful email body to {!$Input:Student.Parent_Contact__r.Name}, the parent of {!$Input:Student.Name}, who is currently in class {!$Input:Student.Class__c} in a structured way.
+
+
+first talk about their Academic Progress. Take details from {!$RelatedList:Student.Education_Details1__r.Records} .
+
+After That take details from {!$RelatedList:Student.Education_Details2__r.Records} and talk about Extra Curricular Progress.
+
+Close the message by thanking
+Use a warm, encouraging tone.
+
+             Instructions
+1.Use separate paragraphs in your response.
+2.only email body no subject
+3. Email body should be in a formatted one
+</content>
+        <inputs>
+            <apiName>Student</apiName>
+            <definition>SOBJECT://Student__c</definition>
+            <masterLabel>Student</masterLabel>
+            <referenceName>Input:Student</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details1__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details1__r.Records</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details2__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details2__r.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_11</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Write a friendly and respectful email body to {!$Input:Student.Parent_Contact__r.Name}, the parent of {!$Input:Student.Name}, who is currently in class {!$Input:Student.Class__c} in a structured way.
+
+Begin like this Dear {!$Input:Student.Parent_Contact__r.Name},
+I hope this message finds you fine.
+I would like to share the progress report for {!$Input:Student.Name}, who is student in Class {!$Input:Student.Class__c}, summarizing their performance during this semester in both academics and extracurricular activities.
+
+&lt;p&gt;Then first talk about their Academic Progress. Take details from {!$RelatedList:Student.Education_Details1__r.Records} .&lt;p&gt;
+
+&lt;p&gt;After That take details from {!$RelatedList:Student.Education_Details2__r.Records} and talk about Extra Curricular Progress.&lt;p&gt;
+
+Close the message by thanking
+Use a warm, encouraging tone.
+
+             Instructions
+1.Use separate paragraphs in your response.
+2.only email body no subject
+3. Email body should be in a formatted one
+</content>
+        <inputs>
+            <apiName>Student</apiName>
+            <definition>SOBJECT://Student__c</definition>
+            <masterLabel>Student</masterLabel>
+            <referenceName>Input:Student</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details1__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details1__r.Records</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details2__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details2__r.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_12</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Write a friendly and respectful email body to {!$Input:Student.Parent_Contact__r.Name}, the parent of {!$Input:Student.Name}, who is currently in class {!$Input:Student.Class__c} in a structured way.
+
+Begin like this Dear {!$Input:Student.Parent_Contact__r.Name},
+I hope this message finds you fine.
+I would like to share the progress report for {!$Input:Student.Name}, who is student in Class {!$Input:Student.Class__c}, summarizing their performance during this semester in both academics and extracurricular activities.
+
+&lt;p&gt;Then first talk about their Academic Progress. Take details from {!$RelatedList:Student.Education_Details1__r.Records} .&lt;p&gt;
+
+&lt;p&gt;After That take details from {!$RelatedList:Student.Education_Details2__r.Records} and talk about Extra Curricular Progress.&lt;p&gt;
+
+Close the message by thanking
+Use a warm, encouraging tone.
+School Management
+
+             Instructions
+1.Use separate paragraphs in your response.
+2.only email body no subject
+3. Email body should be in a formatted one
+</content>
+        <inputs>
+            <apiName>Student</apiName>
+            <definition>SOBJECT://Student__c</definition>
+            <masterLabel>Student</masterLabel>
+            <referenceName>Input:Student</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details1__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details1__r.Records</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Student.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Education_Details2__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Student.Education_Details2__r.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_13</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

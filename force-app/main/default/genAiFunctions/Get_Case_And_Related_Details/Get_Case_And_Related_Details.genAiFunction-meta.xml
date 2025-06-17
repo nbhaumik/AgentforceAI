@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Fetches Case, Contact, Account, and Opportunity details based on Case Number Provied by the User.
+Example Inputs:
+Show me all I need to know about the Case number 001124
+Show me all related details of the case number 0001001</description>
+    <invocationTarget>FetchCaseDetails</invocationTarget>
+    <invocationTargetType>apex</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>Get Case And Related Details</masterLabel>
+</GenAiFunction>

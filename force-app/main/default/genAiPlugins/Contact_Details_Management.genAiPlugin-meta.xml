@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aiPluginUtterances>
+        <developerName>utterance_howcanicon0</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_howcanicon0</masterLabel>
+        <utterance>How can I contact Gerard Carr?</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_showmealli1</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_showmealli1</masterLabel>
+        <utterance>Show me all I need to know about Avi Green</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_whichaccou2</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_whichaccou2</masterLabel>
+        <utterance>Which Account does Avi Green belong to?</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_whichactiv3</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_whichactiv3</masterLabel>
+        <utterance>Which activities are related to Avi Green contact?</utterance>
+    </aiPluginUtterances>
+    <canEscalate>false</canEscalate>
+    <description>This topic handles fetching and managing details related to a contact. It includes actions for retrieving and updating contact information.</description>
+    <developerName>Contact_Details_Management</developerName>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__ExtractFieldsAndValuesFromUserInput</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__GetActivitiesTimeline</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>SvcCopilotTmpl__GetOrdersByContact</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__GetRecordDetails</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>SvcCopilotTmpl__IdentifyCustomerByEmail</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__IdentifyObjectByName</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__IdentifyRecordByName</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__LabelARecord</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__QueryRecords</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__QueryRecordsWithAggregate</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>SvcCopilotTmpl__SendEmailVerificationCode</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__SummarizeRecord</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>SvcCopilotTmpl__UpdateCustomerContact</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__UpdateRecordFields</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__validateSegmentMember</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>SvcCopilotTmpl__VerifyCustomer</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Get_Details_Related_to_Contact</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>Always ask for the contact&apos;s email address to verify identity before providing sensitive information.</description>
+        <developerName>instruction_alwaysaskf0</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_alwaysaskf0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If a user requests contact details, retrieve the information using the contact ID.</description>
+        <developerName>instruction_ifauserreq1</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_ifauserreq1</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If the contact ID is not provided, ask the user for alternative identifiers such as email or phone number.</description>
+        <developerName>instruction_iftheconta2</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_iftheconta2</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>When updating contact information, confirm the changes with the user before saving.</description>
+        <developerName>instruction_whenupdati3</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_whenupdati3</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>You can also search Contact records with a contact&apos;s full or first name. If duplicate records come, provide that as well but with a warning.</description>
+        <developerName>instruction_youcanalso4</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_youcanalso4</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>When retrieving activities related to a contact, ensure that overdue activities are grouped separately from upcoming activities based on their status and date.</description>
+        <developerName>instruction_whenretrie5</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_whenretrie5</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Contact Details Management</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is only to fetch details about a contact and perform all related actions such as updating contact information. Also, get all other related details of a contact</scope>
+</GenAiPlugin>

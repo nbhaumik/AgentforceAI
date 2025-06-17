@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Use this action when the user wants to get the opportunity records he wants to follow up with.
+Example inputs:
+&quot;Which opportunities I need to follow up within the next 5 days?&quot;
+&quot;Remind me about opportunities I need to check in next 7 days.&quot;
+&quot;Show me the opportunities which needs follow up in next 4 days&quot;
+
+Pass the number of days as an input to the variable</description>
+    <invocationTarget>Get_Opportunity_Reminders_NoPrompt</invocationTarget>
+    <invocationTargetType>flow</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <masterLabel>Get Opportunity Reminders NoPrompt</masterLabel>
+    <progressIndicatorMessage>Be Opportunistic !!!</progressIndicatorMessage>
+</GenAiFunction>

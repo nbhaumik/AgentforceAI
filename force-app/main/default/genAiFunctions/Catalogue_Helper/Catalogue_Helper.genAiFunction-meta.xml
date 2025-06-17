@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Start responses with Salutation using the user&apos;s Name.
+Provide structured information on the product requested by the user.
+When the user asks for comparison between two products, provide very brief specification comparison in a structured response.</description>
+    <invocationTarget>Catalogue_Helper</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <masterLabel>Catalogue Helper</masterLabel>
+    <progressIndicatorMessage>Looking up...</progressIndicatorMessage>
+</GenAiFunction>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>This topic is chosen when engaging with potential leads to boost sales and conversions.</description>
+    <developerName>p_16jgL000000IVN7_Lead_Generation_Follow_Up</developerName>
+    <genAiFunctions>
+        <functionName>Get_Opportunity_Reminders_NoPrompt</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Summarize_Opportunity</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__AnswerQuestionsWithKnowledge</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If the query is about following up with leads, use Get_Opportunity_Reminders_NoPrompt.</description>
+        <developerName>instruction_0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If the query is about opportunity details, use Summarize_Opportunity.</description>
+        <developerName>instruction_1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_1</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Lead Generation Follow Up</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to only engage with potential leads and boost sales and conversions. You aren&apos;t able to handle existing customer queries.</scope>
+</GenAiPlugin>

@@ -1,0 +1,13 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "caseNumbers" : {
+      "title" : "caseNumbers",
+      "description" : "The user might ask Show me all I need to know about Case number 00001001. Pass this case number as input to the apex.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

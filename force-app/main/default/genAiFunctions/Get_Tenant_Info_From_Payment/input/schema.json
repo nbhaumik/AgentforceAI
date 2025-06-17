@@ -1,0 +1,20 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "PaymentId" : {
+      "title" : "PaymentId",
+      "description" : "When the user asks for unit or tenant related to a payment name or Payment Id, use that name or payment Id as 'paymentId' in put",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "RelatedRecIfo" : {
+      "title" : "RelatedRecIfo",
+      "description" : "ignore this",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

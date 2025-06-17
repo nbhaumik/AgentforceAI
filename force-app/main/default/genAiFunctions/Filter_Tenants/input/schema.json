@@ -1,0 +1,20 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "TenantDates" : {
+      "title" : "TenantDates",
+      "description" : "If user provides any prompt like Show tenants whose agreement date starts January 2024 or whose agreement finishes May 2025, these kind of date related filters are eligible for this input.",
+      "lightning:type" : "lightning__dateType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "TenantParameter" : {
+      "title" : "TenantParameter",
+      "description" : "If user prompts Tenant's related unit or Leasee name to fetch tenant records, pass the unit name or lease name to this parameter.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

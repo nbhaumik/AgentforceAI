@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This action is used when the user prompts to get the tenant info whose agreement is for more than 11 months.</description>
+    <invocationTarget>Agreements_Exceeding_11_months</invocationTarget>
+    <invocationTargetType>flow</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <masterLabel>Agreements Exceeding 11 months</masterLabel>
+    <progressIndicatorMessage>Fetching possible tenants</progressIndicatorMessage>
+</GenAiFunction>

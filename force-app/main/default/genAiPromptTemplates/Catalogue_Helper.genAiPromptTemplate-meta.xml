@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_2</activeVersionIdentifier>
+    <developerName>Catalogue_Helper</developerName>
+    <masterLabel>Catalogue Helper</masterLabel>
+    <templateVersions>
+        <content>Analyse data from {!$EinsteinSearch:Default_FileUDMO_SI_Retriever_1Cx_a937ea687b7.results}
+
+Provide details on a specific product.
+Also provide a specification comparison between two products if prompted by the user.
+
+Based on comparison, provide the best product to buy. Calculate - Price, Battery life and Range of coverage.
+Strictly provide your answers in bullet format and headings and in short.
+</content>
+        <inputs>
+            <apiName>CustomerQuery</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>CustomerQuery</masterLabel>
+            <referenceName>Input:CustomerQuery</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Default_FileUDMO_SI_Retriever_1Cx_a937ea687b7</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:CustomerQuery}</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Default_FileUDMO_SI_Retriever_1Cx_a937ea687b7</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Analyse data from {!$EinsteinSearch:Default_Brochures_Index_Retriever_1Cx_a93c478b3d4.results}
+Understand if the customer is asking for information or a specification comparison from {!$Input:CustomerQuery}
+Based on the above.
+
+- Provide details on a specific product.
+- Also provide a specification comparison between two products if prompted by the user.
+
+Based on comparison, provide the best product to buy. Calculate - Price, Battery life and Range of coverage.
+Strictly provide your answers in bullet format and headings and in short.
+</content>
+        <inputs>
+            <apiName>CustomerQuery</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>CustomerQuery</masterLabel>
+            <referenceName>Input:CustomerQuery</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Default_Brochures_Index_Retriever_1Cx_a93c478b3d4</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:CustomerQuery}</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Default_Brochures_Index_Retriever_1Cx_a93c478b3d4</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_2</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

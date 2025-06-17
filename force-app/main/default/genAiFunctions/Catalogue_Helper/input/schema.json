@@ -1,0 +1,21 @@
+{
+  "required" : [ "Input:CustomerQuery" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Input:CustomerQuery" : {
+      "title" : "CustomerQuery",
+      "description" : "Get the prompt from the customer and understand if it needs an information or a comparison.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "citationMode" : {
+      "title" : "Citation Mode",
+      "description" : "Select Citation Mode",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

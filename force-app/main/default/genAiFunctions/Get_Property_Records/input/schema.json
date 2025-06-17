@@ -1,0 +1,13 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "InputProperty" : {
+      "title" : "InputProperty",
+      "description" : "Get the property name from user to fetch records. If user does not give a property name or Property Type input show all records.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

@@ -1,0 +1,13 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "InputUnitToUpdate" : {
+      "title" : "InputUnitToUpdate",
+      "description" : "It take the unit name as input. If user ask for please delete the tenants of unit '001' and Update status. Then Take 001 as input",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

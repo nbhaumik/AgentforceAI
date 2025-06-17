@@ -1,0 +1,24 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "propertyName" : {
+      "title" : "propertyName",
+      "description" : "Get the property name from the user's prompt and pass on to the flow",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "tenantDate" : {
+      "title" : "tenantDate",
+      "description" : "Fetch the agreement  date from the user",
+      "maxItems" : 2000,
+      "items" : {
+        "lightning:type" : "lightning__dateType"
+      },
+      "lightning:type" : "lightning__listType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

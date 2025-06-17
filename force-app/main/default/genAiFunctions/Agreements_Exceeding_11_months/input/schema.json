@@ -1,0 +1,20 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "InputProperty" : {
+      "title" : "InputProperty",
+      "description" : "If the tenant provides name of the Property, then take the name as input. If tenant does not provide property name, keep value as null",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "isAgreementExceeding" : {
+      "title" : "isAgreementExceeding",
+      "description" : "value is true",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

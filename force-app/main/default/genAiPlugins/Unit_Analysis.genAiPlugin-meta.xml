@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <aiPluginUtterances>
+        <developerName>utterance_showmetheb0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>utterance_showmetheb0</masterLabel>
+        <utterance>Show me the 3 bhk units of this property</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_howmanyuni1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>utterance_howmanyuni1</masterLabel>
+        <utterance>How many units are available in this property?</utterance>
+    </aiPluginUtterances>
+    <canEscalate>false</canEscalate>
+    <description>The topic searches for Unit__c object records. When user searches for any Unit records, the topic needs to understand the condition of the search and return records.</description>
+    <developerName>Unit_Analysis</developerName>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__ExtractFieldsAndValuesFromUserInput</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__GetActivityDetails</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__GetRecordDetails</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>SvcCopilotTmpl__IdentifyCustomerByEmail</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__IdentifyObjectByName</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__IdentifyRecordByName</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__LabelARecord</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__QueryRecords</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__QueryRecordsWithAggregate</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__SummarizeRecord</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__UpdateRecordFields</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Get_Unit_Related_to_Property</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Get_Unit_with_Room_Details</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Get_Units_on_Status_Rent</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If a user provides specific search criteria, use those criteria to find the relevant Unit__c records.</description>
+        <developerName>instruction_ifauserpro0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_ifauserpro0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Ask clarifying questions to gather more information if the initial search criteria are vague or incomplete.</description>
+        <developerName>instruction_askclarify1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_askclarify1</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>When returning records, ensure the results match the user&apos;s specified search conditions.</description>
+        <developerName>instruction_whenreturn2</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_whenreturn2</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If no records are found, inform the user and ask if they would like to modify their search criteria or escalate to an agent.</description>
+        <developerName>instruction_ifnorecord3</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_ifnorecord3</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If user wants to fetch units based on Property names, take property name as an input from user. Use that to filter find the property ID and filter unit records with that</description>
+        <developerName>instruction_ifuserwant4</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_ifuserwant4</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If user prompts with conditions like &quot;Show me Unit records where there are only 2 bathrooms&quot; search for Unit records with 2 bathrooms.</description>
+        <developerName>instruction_ifuserprom5</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_ifuserprom5</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>pass the keywords like &apos;available, occupied&apos; into status.</description>
+        <developerName>instruction_passthekey6</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_passthekey6</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>pass the bedroom and bathroom counts as the variable rooms in the flow.</description>
+        <developerName>instruction_passthebed7</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_passthebed7</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If user want to update the availability of units based on the agreement, then update the status and show available units.</description>
+        <developerName>instruction_ifuserwant8</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_ifuserwant8</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Unit Analysis</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to find the relevant records of the Unit__c object as asked by the user. If user wants to filter units by any other dependent object fields, scope covers that object as well.</scope>
+</GenAiPlugin>

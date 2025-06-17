@@ -1,0 +1,27 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "InputReqInfo" : {
+      "title" : "InputReqInfo",
+      "description" : "This parameter takes input as Bathroom or Bedroom. If the User prompts 3 BHK, it means the number of bedrooms is 3. Similarly, 2 BHK means 2 bedrooms. If the user prompts 'Show me units with 2 bathrooms, take input as 'bathroom' and the number of bedroom or bathroom will be taken care of by NoOfRequirement variable.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "Input_Property" : {
+      "title" : "Input_Property",
+      "description" : "This input is when the User prompts to search the units related to a property. The Property name that the user provides in the chat will be passed as a parameter. example: Show 3bhk units of Mantri Luxury Heights property.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "NoOfRequirement" : {
+      "title" : "NoOfRequirement",
+      "description" : "If the user asks to show units based on BHK, take the number before BHK to filter the number of bedrooms. Example: 4 BHK means 4 bedrooms. If the user prompts to filter units by bathrooms, capture the number or quantity of bathrooms and use it as a parameter.",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

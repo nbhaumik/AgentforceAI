@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_2</activeVersionIdentifier>
+    <description>This prompt template is used to generate replies for an incoming email containing enquiries done by a lead customer.</description>
+    <developerName>Lead_Email_Reply</developerName>
+    <masterLabel>Lead Email Reply</masterLabel>
+    <templateVersions>
+        <content>You are HewlettBot, an agent of Hewlett Solutions who deals with Sales and marketing. You will get an input email body {!$Input:leadEmails.Email_Body__c}
+Kindly get the details of the Lead marked by {!$Input:leadEmails.Related_Lead__r.Name} and understand his requirement from both the email body and {!$Input:leadEmails.Related_Lead__r.Description}
+
+Analyse the sentiment from the email body, check the {!$Input:leadEmails.Name} and help in creating a professional and enthusiastic email reply. {!$Input:leadEmails.Related_Lead__r.ProductInterest__c} and {!$Input:leadEmails.Related_Lead__r.Industry} can help you figure out more polished way of assurance that our sale will be successful.
+</content>
+        <inputs>
+            <apiName>leadEmails</apiName>
+            <definition>SOBJECT://Lead_Email_Log__c</definition>
+            <masterLabel>leadEmails</masterLabel>
+            <referenceName>Input:leadEmails</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultAzureOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Role: Generate response paragraph based on inputs.
+Input: Incoming email is defined by {!$Input:leadEmails.Email_Body__c}
+Job:
+1. Get the details of the Lead marked by {!$Input:leadEmails.Related_Lead__r.Name} and understand his requirement from both the email body and {!$Input:leadEmails.Related_Lead__r.Description}
+2. Analyse the sentiment from the email body.
+3. Consider {!$Input:leadEmails.Related_Lead__r.ProductInterest__c} and {!$Input:leadEmails.Related_Lead__r.Industry} to figure out a more polished way to give a sense of assurance in your reply.
+
+Don&apos;t include any salutations and email signatures in your response.
+Elaborate your response within 10 lines. Use separate paragraphs in your response.
+</content>
+        <inputs>
+            <apiName>leadEmails</apiName>
+            <definition>SOBJECT://Lead_Email_Log__c</definition>
+            <masterLabel>leadEmails</masterLabel>
+            <referenceName>Input:leadEmails</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_2</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

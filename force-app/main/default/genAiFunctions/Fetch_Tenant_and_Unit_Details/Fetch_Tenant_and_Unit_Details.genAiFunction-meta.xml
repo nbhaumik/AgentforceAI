@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Fetches Tenant_Info__c and Unit__c records based on due Payment_Detail__c records. When an user prompts to see the unit records or tenant records whose payment is still due for the current month, this action is used. Example inputs are - &quot;Show me all the units whose payment is due in this month&quot; or &quot;Show me the tenants who have not paid the rent for this month yet&quot;</description>
+    <invocationTarget>TenantUnitFetcher</invocationTarget>
+    <invocationTargetType>apex</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <masterLabel>Fetch Tenant and Unit Details</masterLabel>
+    <progressIndicatorMessage>Fetching Tenant and Units</progressIndicatorMessage>
+</GenAiFunction>

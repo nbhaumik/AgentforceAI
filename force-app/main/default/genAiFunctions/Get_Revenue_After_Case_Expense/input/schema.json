@@ -1,0 +1,13 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "UnitName_Input" : {
+      "title" : "UnitName_Input",
+      "description" : "The unit name given by the user is passed as a parameter. If there is no unit name in user's prompt, ask the user for input.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

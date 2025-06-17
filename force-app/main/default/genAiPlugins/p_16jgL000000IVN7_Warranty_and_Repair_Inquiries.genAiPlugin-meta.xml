@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>This topic is chosen when a customer has questions about product warranties or needs repair services.</description>
+    <developerName>p_16jgL000000IVN7_Warranty_and_Repair_Inquiries</developerName>
+    <genAiPluginInstructions>
+        <description>If the query is about warranty or repair, use EmployeeCopilot__AnswerQuestionsWithKnowledge.</description>
+        <developerName>instruction_0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_0</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Warranty and Repair Inquiries</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to only handle queries related to product warranties and repair services. You aren&apos;t able to provide technical support or product information.</scope>
+</GenAiPlugin>

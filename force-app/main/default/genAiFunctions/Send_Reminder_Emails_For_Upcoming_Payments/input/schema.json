@@ -1,0 +1,13 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "SendDuePaymentReminder" : {
+      "title" : "SendDuePaymentReminder",
+      "description" : "When user ask for upcoming payment reminder or remind about current month payments. Then make the variable as true",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

@@ -1,0 +1,17 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "tenantDate" : {
+      "title" : "tenantDate",
+      "description" : "When users prompt to search all tenant records based on a date pass Tenant as an input",
+      "maxItems" : 2000,
+      "items" : {
+        "lightning:type" : "lightning__dateType"
+      },
+      "lightning:type" : "lightning__listType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

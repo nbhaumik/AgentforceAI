@@ -1,0 +1,20 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "ReqInputObject" : {
+      "title" : "ReqInputObject",
+      "description" : "If user ask for delayed payments more than a month, take Payment as the input, if user ask for tenants of payments delayed for more than a month then take tenant as the input and if user ask for Contact associated with payments delayed for more than a month, then take contact as the input",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "WantDuePayment" : {
+      "title" : "WantDuePayment",
+      "description" : "If user need delayed payment for more than a month the take true as the input.",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

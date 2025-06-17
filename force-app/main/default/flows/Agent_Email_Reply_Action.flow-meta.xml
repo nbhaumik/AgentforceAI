@@ -1,51 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
-        <name>Process_Message_body</name>
-        <label>Process Message body</label>
+        <name>Generate_Reply_for_Lead</name>
+        <label>Generate Reply for Lead</label>
         <locationX>176</locationX>
-        <locationY>431</locationY>
-        <actionName>Email_Replies_Config</actionName>
+        <locationY>539</locationY>
+        <actionName>Lead_Email_Reply</actionName>
         <actionType>generatePromptResponse</actionType>
         <connector>
-            <targetReference>Message_body_store</targetReference>
+            <targetReference>Storing_the_Reply</targetReference>
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
-            <name>Input:EmailMessage</name>
+            <name>Input:leadEmails</name>
             <value>
                 <elementReference>$Record</elementReference>
             </value>
         </inputParameters>
-        <nameSegment>Email_Replies_Config</nameSegment>
+        <nameSegment>Lead_Email_Reply</nameSegment>
         <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <actionCalls>
-        <name>Reply_Send</name>
-        <label>Reply Send</label>
+        <name>Sending_Reply_Email</name>
+        <label>Sending Reply Email</label>
         <locationX>176</locationX>
-        <locationY>647</locationY>
+        <locationY>755</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Audit_Check</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>emailAddresses</name>
             <value>
-                <elementReference>$Record.FromAddress</elementReference>
+                <elementReference>$Record.From_Address__c</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
             <name>emailSubject</name>
             <value>
-                <elementReference>$Record.Subject</elementReference>
+                <elementReference>$Record.Name</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
             <name>emailBody</name>
             <value>
-                <elementReference>MessageReply</elementReference>
+                <elementReference>EmailReplyBody</elementReference>
             </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
         <offset>0</offset>
@@ -53,19 +65,19 @@
     <apiVersion>63.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
-        <name>Message_body_store</name>
-        <label>Message body store</label>
+        <name>Storing_the_Reply</name>
+        <label>Storing the Reply</label>
         <locationX>176</locationX>
-        <locationY>539</locationY>
+        <locationY>647</locationY>
         <assignmentItems>
             <assignToReference>MessageReply</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Process_Message_body.promptResponse</elementReference>
+                <elementReference>Generate_Reply_for_Lead.promptResponse</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Reply_Send</targetReference>
+            <targetReference>Sending_Reply_Email</targetReference>
         </connector>
     </assignments>
     <environments>Default</environments>
@@ -97,39 +109,65 @@
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Process_Message_body</targetReference>
+            <targetReference>Update_Log_with_Lead</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Id</field>
+            <field>Email</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.RelatedToId</elementReference>
+                <elementReference>$Record.From_Address__c</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Lead</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordUpdates>
+        <name>Audit_Check</name>
+        <label>Audit Check</label>
+        <locationX>176</locationX>
+        <locationY>863</locationY>
+        <inputAssignments>
+            <field>Auto_Reply_Sent__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Log_with_Lead</name>
+        <label>Update Log with Lead</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Generate_Reply_for_Lead</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Related_Lead__c</field>
+            <value>
+                <elementReference>Get_Related_Lead.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <start>
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Related_Lead</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Incoming</field>
-            <operator>EqualTo</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
-        <object>EmailMessage</object>
+        <object>Lead_Email_Log__c</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <textTemplates>
+        <name>EmailReplyBody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;strong&gt;Hi {!Get_Related_Lead.FirstName},&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!MessageReply}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;em&gt;This is a noreply email. Please send your replies to lead_pilot@f-r0ap7au4aji4eh2d9r5lbouch31outrq5oj6xklkbrziu1tsu.gl-ra93uac.can98.apex.salesforce.com email address.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Thanks,&lt;/p&gt;&lt;p&gt;Office of Hewlett Solutions&lt;span style=&quot;font-family: serif;&quot;&gt;﻿&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
     <variables>
         <name>MessageReply</name>
         <dataType>String</dataType>

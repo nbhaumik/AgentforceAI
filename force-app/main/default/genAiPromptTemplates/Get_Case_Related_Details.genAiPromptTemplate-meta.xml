@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_5</activeVersionIdentifier>
+    <developerName>Get_Case_Related_Details</developerName>
+    <masterLabel>Get Case Related Details</masterLabel>
+    <templateVersions>
+        <content>Case Number: {!$Input:Case_Details.CaseNumber}
+Case Status: {!$Input:Case_Details.Status}
+
+Related Contact Name: {!$Input:Case_Details.Contact.Name}
+Get in touch with them at: {!$Input:Case_Details.Contact.MobilePhone}
+Email the person here: {!$Input:Case_Details.Contact.Email}
+
+Opportunities Related to this Contact Are:
+Subject: {!$Input:Opportunity_Details.Description}
+Stage: {!$Input:Opportunity_Details.StageName}
+Probability: {!$Input:Opportunity_Details.Probability}
+Expected Amount: {!$Input:Opportunity_Details.Amount}
+</content>
+        <inputs>
+            <apiName>Case_Details</apiName>
+            <definition>SOBJECT://Case</definition>
+            <masterLabel>Case Details</masterLabel>
+            <referenceName>Input:Case_Details</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Opportunity_Details</apiName>
+            <definition>SOBJECT://Opportunity</definition>
+            <masterLabel>Opportunity Details</masterLabel>
+            <referenceName>Input:Opportunity_Details</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Case Number: {!$Input:Case_Details.CaseNumber}
+Case Status: {!$Input:Case_Details.Status}
+
+Related Contact Name: {!$Input:Case_Details.Contact.Name}
+Get in touch with them at: {!$Input:Case_Details.Contact.MobilePhone}
+Email the person here: {!$Input:Case_Details.Contact.Email}
+
+Opportunities Related to this Contact Are:
+Subject: {!$Input:Opportunity_Details.Description}
+Stage: {!$Input:Opportunity_Details.StageName}
+Probability: {!$Input:Opportunity_Details.Probability}
+Expected Amount: {!$Input:Opportunity_Details.Amount}
+</content>
+        <inputs>
+            <apiName>Case_Details</apiName>
+            <definition>SOBJECT://Case</definition>
+            <masterLabel>Case Details</masterLabel>
+            <referenceName>Input:Case_Details</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Opportunity_Details</apiName>
+            <definition>SOBJECT://Opportunity</definition>
+            <masterLabel>Opportunity Details</masterLabel>
+            <referenceName>Input:Opportunity_Details</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
+        <status>Draft</status>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_2</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Case Number: {!$Input:Case_Details.CaseNumber}
+Case Status: {!$Input:Case_Details.Status}
+
+Related Contact Name: {!$Input:Case_Details.Contact.Name}
+Get in touch with them at: {!$Input:Case_Details.Contact.MobilePhone}
+Email the person here: {!$Input:Case_Details.Contact.Email}
+
+Opportunities Related to this Contact Are:
+Subject: {!$Input:Opportunity_Details.Description}
+Stage: {!$Input:Opportunity_Details.StageName}
+Probability: {!$Input:Opportunity_Details.Probability}
+Expected Amount: {!$Input:Opportunity_Details.Amount}
+</content>
+        <inputs>
+            <apiName>Opportunity_Details</apiName>
+            <definition>SOBJECT://Opportunity</definition>
+            <masterLabel>Opportunity Details</masterLabel>
+            <referenceName>Input:Opportunity_Details</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Case_Details</apiName>
+            <definition>SOBJECT://Case</definition>
+            <masterLabel>Case Details</masterLabel>
+            <referenceName>Input:Case_Details</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_3</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Case Number: {!$Input:Case_Details.CaseNumber}
+Case Status: {!$Input:Case_Details.Status}
+
+Related Contact Name: {!$Input:Case_Details.Contact.Name}
+Get in touch with them at: {!$Input:Case_Details.Contact.MobilePhone}
+Email the person here: {!$Input:Case_Details.Contact.Email}
+
+Opportunities Related to this Contact Are:
+
+Subject: {!$Input:Opportunity_Details.Name}
+Stage: {!$Input:Opportunity_Details.StageName}
+Probability: {!$Input:Opportunity_Details.Probability}
+Expected Amount: {!$Input:Opportunity_Details.Amount}
+</content>
+        <inputs>
+            <apiName>Case_Details</apiName>
+            <definition>SOBJECT://Case</definition>
+            <masterLabel>Case Details</masterLabel>
+            <referenceName>Input:Case_Details</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Opportunity_Details</apiName>
+            <definition>SOBJECT://Opportunity</definition>
+            <masterLabel>Opportunity Details</masterLabel>
+            <referenceName>Input:Opportunity_Details</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_4</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Case Number: {!$Input:Case_Details.CaseNumber}
+Case Status: {!$Input:Case_Details.Status}
+Case Priority: {!$Input:Case_Details.Priority}
+
+Related Contact Name: {!$Input:Case_Details.Contact.Name}
+Get in touch with them at: {!$Input:Case_Details.Contact.MobilePhone}
+Email the person here: {!$Input:Case_Details.Contact.Email}
+
+Opportunities Related to this Contact Are:
+
+Subject: {!$Input:Opportunity_Details.Name}
+Stage: {!$Input:Opportunity_Details.StageName}
+Probability: {!$Input:Opportunity_Details.Probability}
+Expected Amount: {!$Input:Opportunity_Details.Amount}
+</content>
+        <inputs>
+            <apiName>Opportunity_Details</apiName>
+            <definition>SOBJECT://Opportunity</definition>
+            <masterLabel>Opportunity Details</masterLabel>
+            <referenceName>Input:Opportunity_Details</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Case_Details</apiName>
+            <definition>SOBJECT://Case</definition>
+            <masterLabel>Case Details</masterLabel>
+            <referenceName>Input:Case_Details</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_5</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

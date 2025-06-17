@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Extra_Curriculum</fullName>
+    <active>true</active>
+    <label>Extra Curriculum</label>
+    <picklistValues>
+        <picklist>Activity_Type__c</picklist>
+        <values>
+            <fullName>Dance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Debate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drama</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drawing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Singing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteer Work</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Course_Name__c</picklist>
+        <values>
+            <fullName>Language and Literature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pure Science</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Science</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Role__c</picklist>
+        <values>
+            <fullName>Team Captain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Team Member</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Show Tenants Vacated Property In 3 Months</description>
+    <invocationTarget>Show_Tenants_Vacated</invocationTarget>
+    <invocationTargetType>flow</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <masterLabel>Show Tenants Vacated Property In 3 Months</masterLabel>
+    <progressIndicatorMessage>Fetching tenants details, vacated for past 3 months</progressIndicatorMessage>
+</GenAiFunction>

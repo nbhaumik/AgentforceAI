@@ -1,0 +1,13 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "inputname" : {
+      "title" : "inputname",
+      "description" : "Get the tenant name and search contacts. Get tenant records to match the contact. Then search for the Payment details related to the tenant.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

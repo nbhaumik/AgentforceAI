@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
-    <activeVersionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_1</activeVersionIdentifier>
+    <activeVersionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_11</activeVersionIdentifier>
     <developerName>Summarize_Opportunity_Reminders</developerName>
     <masterLabel>Summarize Opportunity Reminders</masterLabel>
     <relatedEntity>Opportunity</relatedEntity>
@@ -38,7 +38,7 @@ Its linked to the Account - {!$Input:Opportunity.Account.Name}
             <required>true</required>
         </inputs>
         <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
-        <status>Draft</status>
+        <status>Published</status>
         <templateDataProviders>
             <definition>invocable://getRelatedList</definition>
             <parameters>
@@ -56,6 +56,316 @@ Its linked to the Account - {!$Input:Opportunity.Account.Name}
             <referenceName>RelatedList:Opportunity.OpportunityContactRoles.Records</referenceName>
         </templateDataProviders>
         <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_2</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>your responsibility is to get all the opportunity fields related to {!$Input:Opportunity.Name}
+Include the fields {!$Input:Opportunity.Description} , {!$Input:Opportunity.NextStep}, {!$Input:Opportunity.CloseDate} , {!$Input:Opportunity.StageName} and {!$Input:Opportunity.Probability} mandatorily.
+
+Also show the contact names, email and numbers related to {!$RelatedList:Opportunity.OpportunityContactRoles.Records}
+You may refer to {!$Input:Opportunity.ContactId} if needed.
+Answer with bullet points and professionally.
+</content>
+        <inputs>
+            <apiName>objectToSummarize</apiName>
+            <definition>SOBJECT://Opportunity</definition>
+            <referenceName>Input:Opportunity</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultAzureOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Opportunity.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>OpportunityContactRoles</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Opportunity.OpportunityContactRoles.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_3</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>your responsibility is to get all the opportunity fields related to {!$Input:Opportunity.Name}
+Include the fields {!$Input:Opportunity.Description} , {!$Input:Opportunity.NextStep}, {!$Input:Opportunity.CloseDate} , {!$Input:Opportunity.StageName} and {!$Input:Opportunity.Probability} mandatorily.
+
+Also show the contact names, email and numbers related to {!$RelatedList:Opportunity.OpportunityContactRoles.Records}
+You may refer to {!$Input:Opportunity.ContactId} if needed. Exclude it if you already get details from the Contact Roles.
+Answer professionally.
+</content>
+        <inputs>
+            <apiName>objectToSummarize</apiName>
+            <definition>SOBJECT://Opportunity</definition>
+            <referenceName>Input:Opportunity</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultAzureOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Opportunity.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>OpportunityContactRoles</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Opportunity.OpportunityContactRoles.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_4</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>your responsibility is to get all the opportunity fields related to {!$Input:Opportunity.Name}
+Include the fields {!$Input:Opportunity.Description} , {!$Input:Opportunity.NextStep}, {!$Input:Opportunity.CloseDate} , {!$Input:Opportunity.StageName} and {!$Input:Opportunity.Probability}
+
+Also show the contact names, email and numbers related to {!$RelatedList:Opportunity.OpportunityContactRoles.Records}
+You may refer to {!$Input:Opportunity.ContactId} if needed. Exclude it if you already get details from the Contact Roles.
+Answer professionally.
+</content>
+        <inputs>
+            <apiName>objectToSummarize</apiName>
+            <definition>SOBJECT://Opportunity</definition>
+            <referenceName>Input:Opportunity</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultAzureOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Opportunity.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>OpportunityContactRoles</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Opportunity.OpportunityContactRoles.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_5</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>your responsibility is to get all the opportunity fields related to {!$Input:Opportunity.Name}
+Include the fields {!$Input:Opportunity.Description} , {!$Input:Opportunity.NextStep}, {!$Input:Opportunity.CloseDate} , {!$Input:Opportunity.StageName} and {!$Input:Opportunity.Probability}
+
+Also show the contact names, email and numbers related to {!$RelatedList:Opportunity.OpportunityContactRoles.Records}
+You may refer to {!$Input:Opportunity.ContactId} if needed. Exclude it if you already get details from the Contact Roles.
+Answer professionally.
+</content>
+        <inputs>
+            <apiName>objectToSummarize</apiName>
+            <definition>SOBJECT://Opportunity</definition>
+            <referenceName>Input:Opportunity</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Opportunity.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>OpportunityContactRoles</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Opportunity.OpportunityContactRoles.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_6</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>your responsibility is to get all the opportunity fields related to {!$Input:Opportunity.Name}
+Include the fields {!$Input:Opportunity.Description} , {!$Input:Opportunity.NextStep}, {!$Input:Opportunity.CloseDate} , {!$Input:Opportunity.StageName} and {!$Input:Opportunity.Probability}
+
+Also show the contact names, email and numbers related to {!$RelatedList:Opportunity.OpportunityContactRoles.Records}
+You may refer to {!$Input:Opportunity.ContactId} if needed. Exclude it if you already get details from the Contact Roles.
+Answer professionally.
+</content>
+        <inputs>
+            <apiName>objectToSummarize</apiName>
+            <definition>SOBJECT://Opportunity</definition>
+            <referenceName>Input:Opportunity</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Opportunity.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>OpportunityContactRoles</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Opportunity.OpportunityContactRoles.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_7</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>your responsibility is to get all the opportunity fields related to {!$Input:Opportunity.Name}
+Include the fields {!$Input:Opportunity.Description} , {!$Input:Opportunity.NextStep}, {!$Input:Opportunity.CloseDate} , {!$Input:Opportunity.StageName} and {!$Input:Opportunity.Probability}
+Keep both field names and values in bullet format
+
+Also show the contact names, email and numbers related to {!$RelatedList:Opportunity.OpportunityContactRoles.Records}
+You may refer to {!$Input:Opportunity.ContactId} if needed. Exclude it if you already get details from the Contact Roles.
+Answer professionally.
+</content>
+        <inputs>
+            <apiName>objectToSummarize</apiName>
+            <definition>SOBJECT://Opportunity</definition>
+            <referenceName>Input:Opportunity</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultAzureOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Opportunity.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>OpportunityContactRoles</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Opportunity.OpportunityContactRoles.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_8</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>your responsibility is to get all the opportunity fields related to {!$Input:Opportunity.Name}
+Include the fields {!$Input:Opportunity.Description} , {!$Input:Opportunity.NextStep}, {!$Input:Opportunity.CloseDate} , {!$Input:Opportunity.StageName} and {!$Input:Opportunity.Probability}
+Keep both field names and values in bullet format
+
+Also show the contact names, email and numbers related to {!$RelatedList:Opportunity.OpportunityContactRoles.Records}
+You may refer to {!$Input:Opportunity.ContactId} if needed. Exclude it if you already get details from the Contact Roles.
+Answer professionally.
+</content>
+        <inputs>
+            <apiName>objectToSummarize</apiName>
+            <definition>SOBJECT://Opportunity</definition>
+            <referenceName>Input:Opportunity</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Opportunity.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>OpportunityContactRoles</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Opportunity.OpportunityContactRoles.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_9</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>your responsibility is to get all the opportunity fields related to {!$Input:Opportunity.Name}
+Include the fields {!$Input:Opportunity.Description} , {!$Input:Opportunity.NextStep}, {!$Input:Opportunity.CloseDate} , {!$Input:Opportunity.StageName} and {!$Input:Opportunity.Probability}
+Keep both field names and values in bullet format
+
+Also show the contact names, email and numbers related to {!$RelatedList:Opportunity.OpportunityContactRoles.Records}
+You may refer to {!$Input:Opportunity.ContactId} if needed. Exclude it if you already get details from the Contact Roles.
+Answer professionally.
+</content>
+        <inputs>
+            <apiName>objectToSummarize</apiName>
+            <definition>SOBJECT://Opportunity</definition>
+            <referenceName>Input:Opportunity</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Opportunity.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>OpportunityContactRoles</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Opportunity.OpportunityContactRoles.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_10</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>your responsibility is to get all the opportunity fields related to {!$Input:Opportunity.Name}
+Include the fields {!$Input:Opportunity.Description} , {!$Input:Opportunity.NextStep}, {!$Input:Opportunity.CloseDate} , {!$Input:Opportunity.StageName} and {!$Input:Opportunity.Probability}
+Keep both field names and values in bullet format
+
+Also show the contact names, email and numbers related to {!$RelatedList:Opportunity.OpportunityContactRoles.Records}
+You may refer to {!$Input:Opportunity.ContactId} if needed. Exclude it if you already get details from the Contact Roles.
+Answer professionally.
+</content>
+        <inputs>
+            <apiName>objectToSummarize</apiName>
+            <definition>SOBJECT://Opportunity</definition>
+            <referenceName>Input:Opportunity</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Opportunity.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>OpportunityContactRoles</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Opportunity.OpportunityContactRoles.Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_11</versionIdentifier>
     </templateVersions>
     <type>einstein_gpt__recordSummary</type>
     <visibility>Global</visibility>

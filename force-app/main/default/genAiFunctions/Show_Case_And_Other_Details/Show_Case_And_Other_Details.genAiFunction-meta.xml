@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This action is used when user wants to know all about a particular case number. Example inputs:
+&quot;Show me all I need to know about Case number 00001001&quot;
+
+Example Input:
+&quot;Get me Info on case number 0001125 and its contact&quot;</description>
+    <invocationTarget>Show_Case_And_Other_Details</invocationTarget>
+    <invocationTargetType>flow</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>Show Case And Other Details</masterLabel>
+</GenAiFunction>

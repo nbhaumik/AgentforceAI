@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_1</activeVersionIdentifier>
+    <developerName>Reply_Sentiments</developerName>
+    <masterLabel>Reply Sentiments</masterLabel>
+    <templateVersions>
+        <content>Read the sentiment of the {!$Input:InputMessage} and analyse the mentality.
+Rate the sentiment on a scale of :
+1: Very Dissatisfied
+2: Diappointed
+3: Balanced
+4: Happy
+5: Very Happy
+
+Strictly provide your response in 2 lines: One for the rating and one line for brief analysis of the rating.
+</content>
+        <inputs>
+            <apiName>InputMessage</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>InputMessage</masterLabel>
+            <referenceName>Input:InputMessage</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

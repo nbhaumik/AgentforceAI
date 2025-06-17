@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>The topic fetches all records of the Property__c object and analyses it. If the user is prompted to fetch all property records or &quot;summarize property records&quot; or anything related to property, this topic works.</description>
+    <developerName>Property_Records_Management</developerName>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__GetActivityDetails</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>SvcCopilotTmpl__GetAllCasesForContact</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>SvcCopilotTmpl__GetCaseByCaseNumber</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__GetRecordDetails</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__IdentifyObjectByName</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__IdentifyRecordByName</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__LabelARecord</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__QueryRecords</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__QueryRecordsWithAggregate</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__SummarizeRecord</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__UpdateRecordFields</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If a user requests to fetch all property records, retrieve all records of the Property__c object.</description>
+        <developerName>instruction_ifauserreq0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_ifauserreq0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If a user asks to summarize property records, provide an analysis of the Property__c object records.</description>
+        <developerName>instruction_ifauserask1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_ifauserask1</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Always confirm with the user if they are referring to property records before proceeding.</description>
+        <developerName>instruction_alwaysconf2</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_alwaysconf2</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Once the user request is clarified, execute the appropriate action to fetch or summarize the property records.</description>
+        <developerName>instruction_oncetheuse3</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_oncetheuse3</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Property Records Management</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to retrieve the property object records along with all its fields and then summarize the records while filtering based on certain clauses when user prompts like &quot;Give me all property records where the account belongs to Omega Inc&quot; gives all property records where account name= Omega Inc</scope>
+</GenAiPlugin>

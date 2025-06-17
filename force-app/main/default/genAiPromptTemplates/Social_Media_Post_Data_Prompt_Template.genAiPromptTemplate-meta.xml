@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Analyzes user posts to identify tone, sentiment, or intent.</description>
+    <developerName>Social_Media_Post_Data_Prompt_Template</developerName>
+    <masterLabel>Social Media Post Data Prompt Template</masterLabel>
+    <templateVersions>
+        <content>Get a summary of the posts made by {!$Input:Lead_Information.Name} in different social media platforms.
+Your source of data: {!$EinsteinSearch:Social_Media_Post_Data_dmo_Retriever_1Cx_a9317cc0ea8.results}
+Match the lead name with {!$Input:Lead_Information.Name} and provide all the contents in your response and analyze the sentiment of the lead.
+</content>
+        <inputs>
+            <apiName>Lead_Information</apiName>
+            <definition>SOBJECT://Lead</definition>
+            <masterLabel>Lead Information</masterLabel>
+            <referenceName>Input:Lead_Information</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4</primaryModel>
+        <status>Draft</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Social_Media_Post_Data_dmo_Retriever_1Cx_a9317cc0ea8</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>analyze sentiment</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://List&lt;String&gt;</definition>
+                <isRequired>false</isRequired>
+                <parameterName>outputFieldNames</parameterName>
+                <valueExpression>[&quot;Content&quot;,&quot;Lead&quot;,&quot;Platform&quot;]</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://Integer</definition>
+                <isRequired>false</isRequired>
+                <parameterName>resultCount</parameterName>
+                <valueExpression>20</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Social_Media_Post_Data_dmo_Retriever_1Cx_a9317cc0ea8</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

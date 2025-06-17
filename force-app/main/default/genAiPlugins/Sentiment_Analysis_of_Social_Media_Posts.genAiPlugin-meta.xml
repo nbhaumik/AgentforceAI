@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aiPluginUtterances>
+        <developerName>utterance_doesthisle0</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_doesthisle0</masterLabel>
+        <utterance>Does this lead tell anything about the products in social media?</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_fetchallso1</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_fetchallso1</masterLabel>
+        <utterance>Fetch all social media posts of this lead and analyse the sentiment</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_whatdoesth2</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_whatdoesth2</masterLabel>
+        <utterance>What does this lead talk about our product in social media?</utterance>
+    </aiPluginUtterances>
+    <canEscalate>false</canEscalate>
+    <description>This topic handles analyzing and summarizing sentiments in social media data for leads or contacts.</description>
+    <developerName>Sentiment_Analysis_of_Social_Media_Posts</developerName>
+    <genAiPluginInstructions>
+        <description>Analyze the fetched social media posts to determine the overall sentiment.</description>
+        <developerName>instruction_analyzethe0</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_analyzethe0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Ask clarifying questions if the user does not specify the lead or contact for sentiment analysis.</description>
+        <developerName>instruction_askclarify1</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_askclarify1</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Ensure the analysis includes both positive and negative sentiments expressed in the posts.</description>
+        <developerName>instruction_ensurethea2</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_ensurethea2</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If a user requests sentiment analysis, fetch the relevant social media posts of the specified lead or contact.</description>
+        <developerName>instruction_ifauserreq3</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_ifauserreq3</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Sentiment Analysis of Social Media Posts</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is only to fetch social media posts of a lead or contact and analyze the sentiments expressed in those posts.</scope>
+</GenAiPlugin>

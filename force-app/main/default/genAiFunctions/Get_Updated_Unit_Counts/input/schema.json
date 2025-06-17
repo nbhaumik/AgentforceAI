@@ -1,0 +1,13 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "caseStatus" : {
+      "title" : "caseStatus",
+      "description" : "fetch unit records according to change of status. Users can prompt like - 'Show units which are vacant for last one month' or 'Show unit records whose status changed to available'",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

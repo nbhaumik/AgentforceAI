@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aiPluginUtterances>
+        <developerName>utterance_showmeoppo0</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_showmeoppo0</masterLabel>
+        <utterance>Show me Opportunities I need to follow up on within the next 7 days</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_whichoppor1</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_whichoppor1</masterLabel>
+        <utterance>Which opportunities have yet to be converted to Closed Won?</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_whichoppor2</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_whichoppor2</masterLabel>
+        <utterance>Which opportunities can generate the highest revenues?</utterance>
+    </aiPluginUtterances>
+    <canEscalate>false</canEscalate>
+    <description>Handles records, activities, and events related to Opportunities. Addresses user prompts for Opportunity summary, analysis, and suggestions.</description>
+    <developerName>Opportunity_Management</developerName>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__AnswerQuestionsWithKnowledge</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>AdminCopilot__AnswerQuestionsWithSalesforceDocumentation</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__CreateALabel</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__CreateAToDo</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__GetActivitiesTimeline</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__GetActivityDetails</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__GetRecordDetails</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>SvcCopilotTmpl__IdentifyCustomerByEmail</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__IdentifyObjectByName</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__IdentifyRecordByName</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__LabelARecord</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__LogACall</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__QueryRecords</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__QueryRecordsWithAggregate</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>SvcCopilotTmpl__VerifyCustomer</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Get_Opportunity_Reminders_NoPrompt</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Summarize_Opportunity</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>Always verify the Opportunity ID or name before fetching records.</description>
+        <developerName>instruction_alwaysveri0</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_alwaysveri0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Gather additional information from the user if the initial request is unclear.</description>
+        <developerName>instruction_gatheraddi1</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_gatheraddi1</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If a user requests an Opportunity summary, provide a concise overview of the relevant Opportunity.</description>
+        <developerName>instruction_ifauserreq2</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_ifauserreq2</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Offer suggestions for Opportunity improvement based on available data and analysis.</description>
+        <developerName>instruction_offersugge3</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_offersugge3</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>When asked for analysis, include key metrics and trends related to the Opportunity.</description>
+        <developerName>instruction_whenaskedf4</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_whenaskedf4</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Opportunity Management</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is only to fetch and manage records, activities, and events related to Opportunities, and respond to user prompts regarding Opportunity summaries, analyses, and suggestions.</scope>
+</GenAiPlugin>

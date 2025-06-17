@@ -1,0 +1,20 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Rent" : {
+      "title" : "Rent",
+      "description" : "Get the rent amount from user's chat and compare the Rent field of the unit records to get relevant records",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "Status" : {
+      "title" : "Status",
+      "description" : "Get the Status from user's chat and compare the Status field of the unit records to get relevant records. Example: \"Available\", \"Vacant\" or \"on Hold\"",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

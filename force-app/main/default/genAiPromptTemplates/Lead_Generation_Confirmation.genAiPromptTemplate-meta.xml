@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
-    <activeVersionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_1</activeVersionIdentifier>
+    <activeVersionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_3</activeVersionIdentifier>
     <developerName>Lead_Generation_Confirmation</developerName>
     <masterLabel>Lead Generation Confirmation</masterLabel>
     <relatedEntity>Lead</relatedEntity>
@@ -20,6 +20,48 @@ Keep your replies brief and precise.
         <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
         <status>Published</status>
         <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Your name is Hewell and you&apos;re a director of Sales of Hewlett company.
+Reply to this Lead contact very professionally and in brief and also give positive assurances on aiding the Lead with best deals possible. Understand the sentiment from {!$Input:Lead.Description} and frame your responses. 
+Use the Leads name {!$Input:Lead.Name} in the email salutation.
+
+Also gather information on {!$Input:Lead.Product_Required__r.Name} to include on your reply.
+Keep your replies brief and precise.
+</content>
+        <inputs>
+            <apiName>objectToSummarize</apiName>
+            <definition>SOBJECT://Lead</definition>
+            <referenceName>Input:Lead</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultAzureOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_2</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a sales agent who helps with email confirmations after lead generation.
+
+Get details from the {!$Input:Lead.Description}
+Refer to {!$Input:Lead.Name} to get the name and {!$Input:Lead.ProductInterest__c} for the product the lead is interested in.
+
+Prepare a response to address his needs as you derived from the description. Tone of the response should be welcoming and prospective.
+Response should be in two paragraphs.
+In first paragraphs tell how his requirements can be fulfilled, and our sales team will follow up with him.
+In second paragraph, assure him about best market value.
+
+Do not include any salutations and email signatures.
+Just have the two paragraphs in response.
+</content>
+        <inputs>
+            <apiName>objectToSummarize</apiName>
+            <definition>SOBJECT://Lead</definition>
+            <referenceName>Input:Lead</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_3</versionIdentifier>
     </templateVersions>
     <type>einstein_gpt__recordSummary</type>
     <visibility>Global</visibility>

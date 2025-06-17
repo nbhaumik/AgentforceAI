@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_9</activeVersionIdentifier>
+    <developerName>Summarize_Social_Posts</developerName>
+    <masterLabel>Summarize Social Posts</masterLabel>
+    <templateVersions>
+        <content>Your job is to:
+- Based on the {!$Input:LeadName.Name}, fetch the contents in the {!$EinsteinSearch:Default_Social_Media_Posts_V2_Retriever_1Cx_a930e2058cb.results} where Author name matches the Lead and summarize it.
+- Get sentiment of the author from the social media posts.
+
+Create a structured formatted response like:
+
+**Social Media Sentiments**
+Provide the overview of the social media posts and give an analysis of how the user might be thinking about the products and his use cases.
+Provide summary in maximum 5 lines referring to what he posted in which platform.
+
+Lastly provide suggestions in two lines how to best approach this lead to get the deal done!
+</content>
+        <inputs>
+            <apiName>LeadName</apiName>
+            <definition>SOBJECT://Lead</definition>
+            <masterLabel>LeadName</masterLabel>
+            <referenceName>Input:LeadName</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Default_Social_Media_Posts_V2_Retriever_1Cx_a930e2058cb</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:LeadName.Name}</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Default_Social_Media_Posts_V2_Retriever_1Cx_a930e2058cb</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_5</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Get a summary of the posts made by {!$Input:LeadName.Name} in different social media platforms.
+
+Your source of data: {!$EinsteinSearch:Social_Platform_Posts_1_Retriever_1Cx_a93499ef4ce.results}
+Match the lead name with {!$Input:LeadName.Name} and provide all the contents in your response and analyze the sentiment of the lead.
+</content>
+        <inputs>
+            <apiName>LeadName</apiName>
+            <definition>SOBJECT://Lead</definition>
+            <masterLabel>LeadName</masterLabel>
+            <referenceName>Input:LeadName</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Social_Platform_Posts_1_Retriever_1Cx_a93499ef4ce</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>analyze sentiment</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://List&lt;String&gt;</definition>
+                <isRequired>false</isRequired>
+                <parameterName>outputFieldNames</parameterName>
+                <valueExpression>[&quot;Lead&quot;,&quot;Content&quot;,&quot;Platform&quot;]</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://Integer</definition>
+                <isRequired>false</isRequired>
+                <parameterName>resultCount</parameterName>
+                <valueExpression>20</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Social_Platform_Posts_1_Retriever_1Cx_a93499ef4ce</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_8</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>Get a summary of the posts made by {!$Input:LeadName.Name} in different social media platforms.
+
+Your source of data: {!$EinsteinSearch:Social_Platform_Posts_1_Retriever_1Cx_a93499ef4ce.results}
+Match the lead name with {!$Input:LeadName.Name} and provide all the contents in your response and analyze the sentiment of the lead.
+
+Also provide a very short suggestion how this lead should be approached by the Sales team to get better results.
+</content>
+        <inputs>
+            <apiName>LeadName</apiName>
+            <definition>SOBJECT://Lead</definition>
+            <masterLabel>LeadName</masterLabel>
+            <referenceName>Input:LeadName</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Social_Platform_Posts_1_Retriever_1Cx_a93499ef4ce</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>analyze sentiment</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://List&lt;String&gt;</definition>
+                <isRequired>false</isRequired>
+                <parameterName>outputFieldNames</parameterName>
+                <valueExpression>[&quot;Lead&quot;,&quot;Content&quot;,&quot;Platform&quot;]</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://Integer</definition>
+                <isRequired>false</isRequired>
+                <parameterName>resultCount</parameterName>
+                <valueExpression>20</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Social_Platform_Posts_1_Retriever_1Cx_a93499ef4ce</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>Te8hfDsmFk8AH4gzx4eH1G1dKUu/q98ABu1q/ZIPAFk=_9</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

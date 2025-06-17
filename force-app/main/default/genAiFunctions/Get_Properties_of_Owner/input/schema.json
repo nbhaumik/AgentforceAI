@@ -1,0 +1,13 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "PropertyOwner" : {
+      "title" : "PropertyOwner",
+      "description" : "Get the owner (Account) name from user's prompt. Get the owner (Account) Id by searching with name and then find related property records.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}
